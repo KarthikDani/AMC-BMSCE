@@ -13,7 +13,9 @@
   <link href="assets/img/logo.png" rel="icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -31,45 +33,6 @@
   <!--Cards CSS File-->
   <link href="assets/css/events_card.css" rel="stylesheet">
 
-
-  <!--Fetch Events info and Create cards-->
-  <script>
-    async function fetchData() {
-        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-const targetUrl = 'https://script.google.com/macros/s/AKfycbwUKJvK_6-goTA98ykpSbwi8uXNcmA8Dgk7uKmQFsE/dev';
-
-fetch(proxyUrl + targetUrl)
-  .then(response => response.json())
-  .then(data => {
-    // Handle the fetched data
-  })
-  .catch(error => {
-    console.error('Error fetching data:', error);
-  });
-}
-
-
-    async function createEventCards() {
-        const eventData = await fetchData();
-        const eventContainer = document.getElementById('event-container');
-
-        eventData.forEach(event => {
-            const eventCard = document.createElement('div');
-            eventCard.className = 'col-md-6 col-lg-4 mb-4';
-            eventCard.innerHTML = `
-                <div class="card event-card h-100 border-0">
-                    <!-- Populate the card content using event data -->
-                    <!-- Use event.name, event.description, event.imageURL, event.tags, event.registrationLink -->
-                </div>
-            `;
-            eventContainer.appendChild(eventCard);
-            console.log(eventData)
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', createEventCards);
-</script>
-  
 </head>
 
 <body>
@@ -80,40 +43,16 @@ fetch(proxyUrl + targetUrl)
 
       <div class="logo">
         <h1><a href="index.html">A M E</a></h1>
-
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.jpeg" alt="" class="img-fluid"></a> -->
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="about_us.html">About Us and team</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li>
-          <li><a class="nav-link scrollto" href="#">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+          <li><a class="getstarted scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto" href="about_us.html">About us</a></li>
+          <li><a class="getstarted scrollto " href="events.html">Register for Events</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+      </nav>
 
     </div>
   </header><!-- End Header -->
@@ -137,172 +76,124 @@ fetch(proxyUrl + targetUrl)
 
 
 
-  <section id="events" class="bg-light py-5">
-    <div class="container">
-     
+    <section id="events" class="bg-light py-5">
+      <div class="container">
+
         <div class="row">
 
-            <!--Events Cards-->
+          <!--Events Cards-->
 
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card event-card h-100 border-0">
-                    <div class="event-img">
-                        <img src="assets/img/apple-touch-icon.png" alt="Event 1">
-                    </div>
-                    <div class="event-info">
-                        <h5 class="event-title">Electro Odyssey</h5>
-                        <p class="event-description">Join us at Electro Odyssey, a spark opener of ELSOC Week!</p>
-                        <p class="expanded-description d-none">A super fun game wherein you'll be thrust into a realm of problem-solving, strategic thinking, and heart-racing challenges.<br>
-                            ⚔️ Your mission?<br>
-                            Nothing short of finding hidden treasures through an exhilarating, brain-teasing treasure hunt. 🗝️<br><br>
-                            
-                            So will you answer this call of adventure on
-                            2 PM, 19th August 2023?<br><br>
-                            
-                            Register in teams of 2<br><br>
-                            
-                            Registration fees: Rs. 0 👀<br>
-                            Prize Pool: Rs. 500 🤩 <br><br> For any queries, contact:
-                            <br>
-                            Vinayak: <a class="call-button" href="tel:+9187624 66705">Call</a>
-                            <br>
-                            Arvind: <a class="call-button" href="tel:+916361 275 231">Call</a>
-                        </p>
-                        <div class="event-tags">
-                            <span class="event-tag">Treasure Hunt</span>
-                            <span class="event-tag">Brain Teasers</span>
-                        </div>
-                        <button class="register-button d-none" onclick="openRegistrationForm('https://forms.gle/UQ2zuAKn5HSUa8zp6')">Register Now</button>
-                    </div>
-                </div>
+          <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card event-card h-100 border-0">
+              <div class="event-img">
+                <img src="assets/img/apple-touch-icon.png" alt="Event 1">
+              </div>
+              <div class="event-info">
+                <h5 class="event-title">BioMed Technophilia</h5>
+                <p class="event-description">Join us at BioMed Technophilia, a spark opener</p>
+                <p class="expanded-description d-none">A super fun game wherein you'll be thrust into a realm of
+                  problem-solving, strategic thinking, and heart-racing challenges.<br>
+                  ⚔️ Your mission?<br>
+                  Nothing short of finding hidden treasures through an exhilarating, brain-teasing treasure hunt.
+                  🗝️<br><br>
+
+                  So will you answer this call of adventure on
+                  2 PM, 19th August 2023?<br><br>
+
+                  Register in teams of 2<br><br>
+
+                  Registration fees: Rs. 0 👀<br>
+                  Prize Pool: Rs. 500 🤩 <br><br> For any queries, contact:
+                  <br>
+                  Vinayak: <a class="call-button" href="tel:+9187624 66705">Call</a>
+                  <br>
+                  Arvind: <a class="call-button" href="tel:+916361 275 231">Call</a>
+                </p>
+                <button class="register-button d-none"
+                  onclick="openRegistrationForm('https://forms.gle/UQ2zuAKn5HSUa8zp6')">Register Now</button>
+              </div>
             </div>
+          </div>
 
-
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card event-card h-100 border-0">
-                    <div class="event-img">
-                        <img src="" alt="Event 1">
-                    </div>
-                    <div class="event-info">
-                        <h5 class="event-title">Electro Odyssey</h5>
-                        <p class="event-description">Join us at Electro Odyssey, a spark opener of ELSOC Week!</p>
-                        <p class="expanded-description d-none">A super fun game wherein you'll be thrust into a realm of problem-solving, strategic thinking, and heart-racing challenges.<br>
-                            ⚔️ Your mission?<br>
-                            Nothing short of finding hidden treasures through an exhilarating, brain-teasing treasure hunt. 🗝️<br><br>
-                            
-                            So will you answer this call of adventure on
-                            2 PM, 19th August 2023?<br><br>
-                            
-                            Register in teams of 2<br><br>
-                            
-                            Registration fees: Rs. 0 👀<br>
-                            Prize Pool: Rs. 500 🤩 <br><br> For any queries, contact:
-                            <br>
-                            Vinayak: <a class="call-button" href="tel:+9187624 66705">Call</a>
-                            <br>
-                            Arvind: <a class="call-button" href="tel:+916361 275 231">Call</a>
-                        </p>
-                        <div class="event-tags">
-                            <span class="event-tag">Treasure Hunt</span>
-                            <span class="event-tag">Brain Teasers</span>
-                        </div>
-                        <button class="register-button d-none" onclick="openRegistrationForm('https://forms.gle/UQ2zuAKn5HSUa8zp6')">Register Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 mb-4">
-                <div class="card event-card h-100 border-0">
-                    <div class="event-img">
-                        <img src="" alt="Event 1">
-                    </div>
-                    <div class="event-info">
-                        <h5 class="event-title">Electro Odyssey</h5>
-                        <p class="event-description">Join us at Electro Odyssey, a spark opener of ELSOC Week!</p>
-                        <p class="expanded-description d-none">A super fun game wherein you'll be thrust into a realm of problem-solving, strategic thinking, and heart-racing challenges.<br>
-                            ⚔️ Your mission?<br>
-                            Nothing short of finding hidden treasures through an exhilarating, brain-teasing treasure hunt. 🗝️<br><br>
-                            
-                            So will you answer this call of adventure on
-                            2 PM, 19th August 2023?<br><br>
-                            
-                            Register in teams of 2<br><br>
-                            
-                            Registration fees: Rs. 0 👀<br>
-                            Prize Pool: Rs. 500 🤩 <br><br> For any queries, contact:
-                            <br>
-                            Vinayak: <a class="call-button" href="tel:+9187624 66705">Call</a>
-                            <br>
-                            Arvind: <a class="call-button" href="tel:+916361 275 231">Call</a>
-                        </p>
-                        <div class="event-tags">
-                            <span class="event-tag">Treasure Hunt</span>
-                            <span class="event-tag">Brain Teasers</span>
-                        </div>
-                        <button class="register-button d-none" onclick="openRegistrationForm('https://forms.gle/UQ2zuAKn5HSUa8zp6')">Register Now</button>
-                    </div>
-                </div>
-            </div>
-
-            <!--More cards-->
+          <!--More cards-->
         </div>
+      </div>
+    </section>
+
+
+    <!--Footer-->
+
+    <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-lg-6 text-lg-left text-center">
+          <div class="copyright">
+            &copy; Copyright <strong>Association of Medical Electronics</strong>. All Rights Reserved
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </footer><!-- End Footer -->
 
 
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
         const eventCards = document.querySelectorAll(".event-card");
 
         function slideUpCards() {
-            eventCards.forEach((card, index) => {
-                const cardPosition = card.getBoundingClientRect().top;
-                if (cardPosition < window.innerHeight - 50) {
-                    card.style.opacity = "1";
-                    card.style.transform = "translateY(0)";
-                    card.style.transitionDelay = `${index * 0.2}s`;
-                }
-            });
+          eventCards.forEach((card, index) => {
+            const cardPosition = card.getBoundingClientRect().top;
+            if (cardPosition < window.innerHeight - 50) {
+              card.style.opacity = "1";
+              card.style.transform = "translateY(0)";
+              card.style.transitionDelay = `${index * 0.2}s`;
+            }
+          });
         }
 
         // Attach the slideUpCards function to the scroll event
         window.addEventListener("scroll", slideUpCards);
         // Call the function once on load to show cards that are already in view
         slideUpCards();
-    });
-</script>
+      });
+    </script>
 
 
 
 
-<script>
-    function openRegistrationForm(url) {
+    <script>
+      function openRegistrationForm(url) {
         window.open(url, '_blank');
-    }
-</script>
-<script>
-    // JavaScript to toggle description and registration button visibility
-    document.addEventListener("DOMContentLoaded", function() {
+      }
+    </script>
+    <script>
+      // JavaScript to toggle description and registration button visibility
+      document.addEventListener("DOMContentLoaded", function () {
         const eventCards = document.querySelectorAll(".event-card");
 
-        eventCards.forEach(function(card) {
-            const description = card.querySelector(".event-description");
-            const expandedDescription = card.querySelector(".expanded-description");
-            const registerButton = card.querySelector(".register-button");
+        eventCards.forEach(function (card) {
+          const description = card.querySelector(".event-description");
+          const expandedDescription = card.querySelector(".expanded-description");
+          const registerButton = card.querySelector(".register-button");
 
-            card.addEventListener("click", function() {
-                description.classList.toggle("d-none");
-                expandedDescription.classList.toggle("d-none");
-                registerButton.classList.toggle("d-none");
-            });
+          card.addEventListener("click", function () {
+            description.classList.toggle("d-none");
+            expandedDescription.classList.toggle("d-none");
+            registerButton.classList.toggle("d-none");
+          });
         });
-    });
+      });
 
-    function openRegistrationForm(url) {
+      function openRegistrationForm(url) {
         window.open(url, '_blank');
-    }
-</script>
+      }
+    </script>
+
+
 
 </body>
+
+</html>
